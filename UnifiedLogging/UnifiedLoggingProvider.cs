@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Concurrent;
+using System.Runtime.Versioning;
 using Microsoft.Extensions.Logging;
 
 namespace com.mahonkin.tim.UnifiedLogging;
 
+[UnsupportedOSPlatform("browser")]
 [ProviderAlias("UnifiedLogging")]
 public sealed class UnifiedLoggerProvider : ILoggerProvider
 {
