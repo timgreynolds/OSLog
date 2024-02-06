@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace com.mahonkin.tim.UnifiedLogging;
 
-[ProviderAlias("UnifiedLogger")]
+[ProviderAlias("UnifiedLogging")]
 public sealed class UnifiedLoggerProvider : ILoggerProvider
 {
     private static readonly ConcurrentDictionary<string, UnifiedLogger> _loggers = new ConcurrentDictionary<string, UnifiedLogger>(StringComparer.OrdinalIgnoreCase);

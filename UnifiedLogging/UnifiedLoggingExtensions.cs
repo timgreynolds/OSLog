@@ -12,18 +12,4 @@ public static class UnifiedLoggerExtensions
         builder.Services.TryAddEnumerable(ServiceDescriptor.Singleton<ILoggerProvider, UnifiedLoggerProvider>());
         return builder;
     }
-
-    // public static OSLogLevel MapOSLogLevel(this LogLevel logLevel)
-    // {
-    //     switch (logLevel)
-    //     {
-    //         case LogLevel.Critical: return OSLogLevel.Fault;
-    //         case LogLevel.Error: return OSLogLevel.Error;
-    //         case LogLevel.Warning: return OSLogLevel.Error;
-    //         case LogLevel.Information: return OSLogLevel.Info;
-    //         case LogLevel.Debug: return OSLogLevel.Debug;
-    //         case LogLevel.Trace: return OSLogLevel.Default;
-    //         default: return OSLogLevel.Default;
-    //     }
-    // }
 }
