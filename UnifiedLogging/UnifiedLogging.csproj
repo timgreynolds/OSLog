@@ -4,14 +4,14 @@
     <OutputType>Exe</OutputType>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>Mahonkin.UnifiedLogger</PackageId>
+    <PackageId>Mahonkin.UnifiedLogging</PackageId>
     <Description>Implementation of ILoggerProvider for Apple Unified Logging.</Description>
     <Version>0.0.11</Version>
     <Authors>Timothy Reynolds</Authors>
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageOutputPath>..\..\nupkg</PackageOutputPath>
+<!--    <PackageReadmeFile>README.md</PackageReadmeFile> -->
+<!--    <PackageOutputPath>..\..\nupkg</PackageOutputPath> -->
     <PackageTags>macos;ios;oslog;logging;log</PackageTags>
   </PropertyGroup>
   <ItemGroup>
