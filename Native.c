@@ -1,10 +1,10 @@
 //
-//  Logging.c
-//  UnifiedLoggingNative
+//  Native.c
+//  OSLogNative
 //
 //  Created by Timothy Reynolds on 2/9/24.
 //
-// Many thanks to Sören Nils Kuklau for his Serilog sink for Unified Logging
+// Many thanks to S�ren Nils Kuklau for his Serilog sink for Unified Logging
 // https://github.com/chucker/serilog-sinks-apple-unified-logging
 // and Stephan Schlecht
 // https://stackoverflow.com/questions/53711865/how-to-p-invoke-os-log/53795536#53795536
@@ -18,7 +18,7 @@ extern os_log_t Create(char *subsystem, char *category)
     return os_log_create(subsystem, category);
 }
 
-extern bool LogTypeEnabled(os_log_t log, os_log_type_t type)
+extern bool IsEnabled(os_log_t log, os_log_type_t type)
 {
     return os_log_type_enabled(log, type);
 }

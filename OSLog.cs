@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using Microsoft.Extensions.Logging;
 
-namespace com.mahonkin.tim.UnifiedLogging;
+namespace com.mahonkin.tim.logging;
 
 public enum OSLogType : uint
 {
@@ -33,8 +33,8 @@ public static class OSLog
     [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "Create")]
     public static extern IntPtr Create(string subsytem, string category);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogTypeEnabled")]
-    public static extern bool LogTypeEnabled(IntPtr logPtr, OSLogType type);
+    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "IsEnabled")]
+    public static extern bool IsEnabled(IntPtr logPtr, OSLogType type);
 
     [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "Log")]
     public static extern void Log(IntPtr logPtr, OSLogType type, string message);
