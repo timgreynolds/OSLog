@@ -10,7 +10,7 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = TRUE
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F6BAD688-1394-423B-A007-237F842D4628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
