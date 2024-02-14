@@ -6,15 +6,11 @@
     <Nullable>enable</Nullable>
     <PackageId>Mahonkin.OSLog</PackageId>
     <Description>Utility library that provides access to Apple's Unified Log object.</Description>
-    <Version>0.0.1</Version>
+    <Version>0.0.11</Version>
     <Authors>Timothy Reynolds</Authors>
-    <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>macos;ios;oslog;logging;log</PackageTags>
-    <SolutionDir Condition="'$(SolututionDir)' == '' OR $(SolutionDir.Contains(Undefined))">
-      $(MSBuildProjectDirectory)
-    </SolutionDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <CreateDocumentationFile>true</CreateDocumentationFile>
@@ -23,6 +19,11 @@
     <DebugType>Embedded</DebugType>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="True" PackagePath="\" />
+    <None Include="build\$(Configuration)\libOSLogNative.dylib" Pack="true" PackagePath="runtimes\osx-x64\native" />
+    <None Include="build\$(Configuration)\libOSLogNative.dylib" Pack="true" PackagePath="runtimes\osx-arm64\native" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
   </ItemGroup>

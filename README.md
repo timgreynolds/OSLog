@@ -1,6 +1,4 @@
-# UnifiedLogger 
-
-Implementation of an ILoggerProvider to write log messages to Apple's Unified Logging system on iOS and Mac platforms.
+# OSLog Utility Object
 
 ## Getting started
 
@@ -8,7 +6,8 @@ Explain how to use your package, provide clear and concise getting started instr
 
 ### Prerequisites
 
-What are specific minimum requirements to use your packages? Consider excluding this section if your package works without any additional setup beyond simple package installation.
+What are specific minimum requirements to use your packages? Consider excluding this section if your package works without any additional setup 
+beyond simple package installation.
 
 ## Usage
 
@@ -19,10 +18,12 @@ Examples about how to use your package by providing code snippets/example images
 
 ## Additional documentation
 
-Provide links to more resources: List links such as detailed documentation, tutorial videos, blog posts, or any other relevant documentation to help users get the most out of your package.
+Provide links to more resources: List links such as detailed documentation, tutorial videos, blog posts, or any other relevant documentation to 
+help users get the most out of your package.
 
 ## Feedback
 
 Where and how users can leave feedback?
 
-- Links to a GitHub repository where could open issues, Twitter, a Discord channel, bug tracker, or other platforms where a package consumer can connect with the package author.
+- Links to a GitHub repository where could open issues, Twitter, a Discord channel, bug tracker, or other platforms where a package consumer can 
+connect with the package author.
