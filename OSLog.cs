@@ -30,33 +30,33 @@ public static class OSLog
         }
     }
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "Create")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "Create")]
     public static extern IntPtr Create(string subsytem, string category);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "IsEnabled")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "IsEnabled")]
     public static extern bool IsEnabled(IntPtr logPtr, OSLogType type);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "Log")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "Log")]
     public static extern void Log(IntPtr logPtr, OSLogType type, string message);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogTrace")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogTrace")]
     public static extern void LogTrace(IntPtr logPtr, string message);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogDebug")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogDebug")]
     public static extern void LogDebug(IntPtr logPtr, string message);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogInfo")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogInfo")]
     public static extern void LogInformation(IntPtr logPtr, string message);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogWarning")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogWarning")]
     public static extern void LogWarning(IntPtr logPtr, string message);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogError")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogError")]
     public static extern void LogError(IntPtr logPtr, string message);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogCritical")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogCritical")]
     public static extern void LogCritical(IntPtr logPtr, string message);
 
-    [DllImport("libOSLogNative.dylib", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogDefault")]
+    [DllImport("libOSLogNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "LogDefault")]
     public static extern void LogNone(IntPtr logPtr, string message);
 }

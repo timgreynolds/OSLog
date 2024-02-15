@@ -4,11 +4,9 @@
 //
 //  Created by Timothy Reynolds on 2/9/24.
 //
-// Many thanks to S�ren Nils Kuklau for his Serilog sink for Unified Logging
+// Many thanks to Soren Nils Kuklau and Stephan Schlecht for inspiration.
 // https://github.com/chucker/serilog-sinks-apple-unified-logging
-// and Stephan Schlecht
 // https://stackoverflow.com/questions/53711865/how-to-p-invoke-os-log/53795536#53795536
-// for inspiration.
 //
 
 #include <os/log.h>

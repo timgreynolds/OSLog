@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <PackageId>Mahonkin.OSLog</PackageId>
     <Description>Utility library that provides access to Apple's Unified Log object.</Description>
-    <Version>0.0.11</Version>
+    <Version>0.0.12</Version>
     <Authors>Timothy Reynolds</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
