@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <OutputType>Library</OutputType>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>Mahonkin.OSLog</PackageId>
+    <PackageId>Mahonkin.OSLogger</PackageId>
     <Description>Utility library that provides access to Apple's Unified Log object.</Description>
-    <Version>0.0.12</Version>
+    <Version>0.0.21</Version>
     <Authors>Timothy Reynolds</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>macos;ios;oslog;logging;log</PackageTags>
+    <PackageTags>macos;oslog;logging;log;logger</PackageTags>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <CreateDocumentationFile>true</CreateDocumentationFile>

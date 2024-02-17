@@ -13,7 +13,7 @@ public enum OSLogType : uint
     OS_LOG_TYPE_FAULT = 11
 }
 
-public static class OSLog
+public static class OSLogger
 {
     public static OSLogType GetOSLogType(LogLevel level)
     {
