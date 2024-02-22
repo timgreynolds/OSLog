@@ -33,7 +33,7 @@ extern void LogDefault(os_log_t log, char *mesage)
 
 extern void LogTrace(os_log_t log, char *message)
 {
-    LogDefault(log, message);
+    os_log(log, "%{public}s", message);
 }
 
 extern void LogDebug(os_log_t log, char *message)
@@ -48,7 +48,7 @@ extern void LogInfo(os_log_t log, char *message)
 
 extern void LogWarning(os_log_t log, char *message)
 {
-    LogInfo(log, message);
+    os_log_info(log, "%{public}s", message);
 }
 
 extern void LogError(os_log_t log, char *message)

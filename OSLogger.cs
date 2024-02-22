@@ -15,14 +15,14 @@ public enum OSLogType : uint
 
 public static class OSLogger
 {
-    public static OSLogType GetOSLogType(LogLevel level)
+    public static OSLogType GetOsLogType(LogLevel level)
     {
         switch (level)
         {
             case LogLevel.Trace: return OSLogType.OS_LOG_TYPE_DEFAULT;
             case LogLevel.Debug: return OSLogType.OS_LOG_TYPE_DEBUG;
             case LogLevel.Information: return OSLogType.OS_LOG_TYPE_INFO;
-            case LogLevel.Warning: return OSLogType.OS_LOG_TYPE_INFO;
+            case LogLevel.Warning: return OSLogType.OS_LOG_TYPE_ERROR;
             case LogLevel.Error: return OSLogType.OS_LOG_TYPE_ERROR;
             case LogLevel.Critical: return OSLogType.OS_LOG_TYPE_FAULT;
             case LogLevel.None: return OSLogType.OS_LOG_TYPE_DEFAULT;

@@ -11,7 +11,13 @@ A simple utility class providing "native interoperability" with the Apple Unifie
 * Visual Studio for Mac or Visual Studio Code
 
 ### Installation
+* net7.0 or net8.0 SDK
+* maui-maccatalyst and maui-ios workloads
+* Visual Studio for Mac or Visual Studio Code
 
+### Installation
+
+* Install the NuGet package
 * Install the NuGet package
 
 ## Usage
@@ -19,7 +25,7 @@ A simple utility class providing "native interoperability" with the Apple Unifie
 * Get a pointer to the OSLog object by calling the OSLogger.Create() method.
 `IntPtr logPtr = OSlogger.Create(subsystem, category);`
 * Pass the pointer to any of the OSLogger logging methods along with the log message text.
-`OSLogger.LogDebug(logPtr, "Debug Message");`
+`OSLogger.LogDebug(logPtr, "Debug Message")`
 
 ## Notes
 
@@ -32,6 +38,10 @@ A simple utility class providing "native interoperability" with the Apple Unifie
 * [Github repository](https://github.com/timgreynolds/OSLog/)
 * [Apple Unified Logging](https://developer.apple.com/documentation/os/logging?language=objc)
 * [Logging in C# and .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line)
+* [Github repository](https://github.com/timgreynolds/OSLog/)
+* [Apple Unified Logging](https://developer.apple.com/documentation/os/logging?language=objc)
+* [Logging in C# and .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line)
 
 ## Feedback
+[Github respository issues](https://github.com/timgreynolds/OSLog/issues)
 [Github respository issues](https://github.com/timgreynolds/OSLog/issues)
