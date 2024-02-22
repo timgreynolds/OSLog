@@ -6,23 +6,32 @@ A simple utility class providing "native interoperability" with the Apple Unifie
 
 ### Prerequisites
 
+* net7.0 or net8.0 SDK
+* maui-maccatalyst and maui-ios workloads
+* Visual Studio for Mac or Visual Studio Code
 
+### Installation
+
+* Install the NuGet package
 
 ## Usage
 
-Examples about how to use your package by providing code snippets/example images, or samples links on GitHub if applicable.
+* Get a pointer to the OSLog object by calling the OSLogger.Create() method.
+`IntPtr logPtr = OSlogger.Create(subsystem, category);`
+* Pass the pointer to any of the OSLogger logging methods along with the log message text.
+`OSLogger.LogDebug(logPtr, "Debug Message");`
 
-- Provide sample code using code snippets
-- Include screenshots, diagrams, or other visual help users better understand how to use your package
+## Notes
+
+* There is not a direct, one-to-one correlation between .Net `LogLevel` and Unified Logging `LogType` so I've chosen to map both .Net `LogLevel.Warning` and `LogLevel.Error` to `LogType_Error`.
+* Interpolation on the message supplied is performed before the message is passed to the OSLog object. This means that you cannot take advantage of the Unified Logging option to redact private data.
+* Also because of the interpolation this logger cannot support structured logging.
 
 ## Additional documentation
 
-Provide links to more resources: List links such as detailed documentation, tutorial videos, blog posts, or any other relevant documentation to
-help users get the most out of your package.
+* [Github repository](https://github.com/timgreynolds/OSLog/)
+* [Apple Unified Logging](https://developer.apple.com/documentation/os/logging?language=objc)
+* [Logging in C# and .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line)
 
 ## Feedback
-
-Where and how users can leave feedback?
-
-- Links to a GitHub repository where could open issues, Twitter, a Discord channel, bug tracker, or other platforms where a package consumer can
-  connect with the package author.
+[Github respository issues](https://github.com/timgreynolds/OSLog/issues)
