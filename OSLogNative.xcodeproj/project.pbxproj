@@ -7,16 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22B536E62B79DACE004B709C /* Native.c in Sources */ = {isa = PBXBuildFile; fileRef = 22B536E52B79DACE004B709C /* Native.c */; };
+		222671752B85905200BA713E /* Native.c in Sources */ = {isa = PBXBuildFile; fileRef = 22B536E52B79DACE004B709C /* Native.c */; };
+		225AA63F2B86641600F048A2 /* Native.c in Sources */ = {isa = PBXBuildFile; fileRef = 22B536E52B79DACE004B709C /* Native.c */; };
+		225AA6482B86642400F048A2 /* Native.c in Sources */ = {isa = PBXBuildFile; fileRef = 22B536E52B79DACE004B709C /* Native.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		221B55CF2B772A06002E087B /* OSLogNative.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = OSLogNative.dylib; path = OSLogNative.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		2226717A2B85905200BA713E /* libOSLogNative.ios.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libOSLogNative.ios.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		225AA6442B86641600F048A2 /* libOSLogNative.macos.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libOSLogNative.macos.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		225AA64D2B86642400F048A2 /* libOSLogNative.maccatalyst.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libOSLogNative.maccatalyst.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B536E52B79DACE004B709C /* Native.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Native.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		221B55CD2B772A06002E087B /* Frameworks */ = {
+		222671762B85905200BA713E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225AA6402B86641600F048A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225AA6492B86642400F048A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,7 +55,9 @@
 		221B55D02B772A06002E087B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				221B55CF2B772A06002E087B /* OSLogNative.dylib */,
+				2226717A2B85905200BA713E /* libOSLogNative.ios.dylib */,
+				225AA6442B86641600F048A2 /* libOSLogNative.macos.dylib */,
+				225AA64D2B86642400F048A2 /* libOSLogNative.maccatalyst.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -45,7 +65,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		221B55CB2B772A06002E087B /* Headers */ = {
+		222671732B85905200BA713E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225AA63D2B86641600F048A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225AA6462B86642400F048A2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,21 +89,55 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		221B55CE2B772A06002E087B /* OSLogNative */ = {
+		222671722B85905200BA713E /* OSLogNative.ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 221B55D32B772A06002E087B /* Build configuration list for PBXNativeTarget "OSLogNative" */;
+			buildConfigurationList = 222671772B85905200BA713E /* Build configuration list for PBXNativeTarget "OSLogNative.ios" */;
 			buildPhases = (
-				221B55CB2B772A06002E087B /* Headers */,
-				221B55CC2B772A06002E087B /* Sources */,
-				221B55CD2B772A06002E087B /* Frameworks */,
+				222671732B85905200BA713E /* Headers */,
+				222671742B85905200BA713E /* Sources */,
+				222671762B85905200BA713E /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = OSLogNative;
+			name = OSLogNative.ios;
 			productName = OSLogNative;
-			productReference = 221B55CF2B772A06002E087B /* OSLogNative.dylib */;
+			productReference = 2226717A2B85905200BA713E /* libOSLogNative.ios.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		225AA63C2B86641600F048A2 /* OSLogNative.macos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 225AA6412B86641600F048A2 /* Build configuration list for PBXNativeTarget "OSLogNative.macos" */;
+			buildPhases = (
+				225AA63D2B86641600F048A2 /* Headers */,
+				225AA63E2B86641600F048A2 /* Sources */,
+				225AA6402B86641600F048A2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSLogNative.macos;
+			productName = OSLogNative;
+			productReference = 225AA6442B86641600F048A2 /* libOSLogNative.macos.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		225AA6452B86642400F048A2 /* OSLogNative.maccatalyst */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 225AA64A2B86642400F048A2 /* Build configuration list for PBXNativeTarget "OSLogNative.maccatalyst" */;
+			buildPhases = (
+				225AA6462B86642400F048A2 /* Headers */,
+				225AA6472B86642400F048A2 /* Sources */,
+				225AA6492B86642400F048A2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSLogNative.maccatalyst;
+			productName = OSLogNative;
+			productReference = 225AA64D2B86642400F048A2 /* libOSLogNative.maccatalyst.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -80,11 +148,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1520;
-				TargetAttributes = {
-					221B55CE2B772A06002E087B = {
-						CreatedOnToolsVersion = 15.2;
-					};
-				};
 			};
 			buildConfigurationList = 221B55CA2B772A06002E087B /* Build configuration list for PBXProject "OSLogNative" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -99,17 +162,35 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				221B55CE2B772A06002E087B /* OSLogNative */,
+				222671722B85905200BA713E /* OSLogNative.ios */,
+				225AA63C2B86641600F048A2 /* OSLogNative.macos */,
+				225AA6452B86642400F048A2 /* OSLogNative.maccatalyst */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		221B55CC2B772A06002E087B /* Sources */ = {
+		222671742B85905200BA713E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22B536E62B79DACE004B709C /* Native.c in Sources */,
+				222671752B85905200BA713E /* Native.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225AA63E2B86641600F048A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225AA63F2B86641600F048A2 /* Native.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225AA6472B86642400F048A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225AA6482B86642400F048A2 /* Native.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,12 +249,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "OSLog Native Library for .Net ILogger";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2024 Timothy G. Reynolds";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iOS macOS";
 			};
 			name = Debug;
 		};
@@ -223,30 +308,60 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "OSLog Native Library for .Net ILogger";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2024 Timothy G. Reynolds";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iOS macOS";
 			};
 			name = Release;
 		};
-		221B55D42B772A06002E087B /* Debug */ = {
+		222671782B85905200BA713E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HUBPK2CD78;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
 			name = Debug;
 		};
-		221B55D52B772A06002E087B /* Release */ = {
+		222671792B85905200BA713E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HUBPK2CD78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+			};
+			name = Release;
+		};
+		225AA6422B86641600F048A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HUBPK2CD78;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -254,6 +369,60 @@
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Debug;
+		};
+		225AA6432B86641600F048A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HUBPK2CD78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Release;
+		};
+		225AA64B2B86642400F048A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HUBPK2CD78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+			};
+			name = Debug;
+		};
+		225AA64C2B86642400F048A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ADDITIONAL_SDKS = "";
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HUBPK2CD78;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Release;
 		};
@@ -269,11 +438,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		221B55D32B772A06002E087B /* Build configuration list for PBXNativeTarget "OSLogNative" */ = {
+		222671772B85905200BA713E /* Build configuration list for PBXNativeTarget "OSLogNative.ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				221B55D42B772A06002E087B /* Debug */,
-				221B55D52B772A06002E087B /* Release */,
+				222671782B85905200BA713E /* Debug */,
+				222671792B85905200BA713E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		225AA6412B86641600F048A2 /* Build configuration list for PBXNativeTarget "OSLogNative.macos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225AA6422B86641600F048A2 /* Debug */,
+				225AA6432B86641600F048A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		225AA64A2B86642400F048A2 /* Build configuration list for PBXNativeTarget "OSLogNative.maccatalyst" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225AA64B2B86642400F048A2 /* Debug */,
+				225AA64C2B86642400F048A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -4,11 +4,9 @@
 //
 //  Created by Timothy Reynolds on 2/9/24.
 //
-// Many thanks to S�ren Nils Kuklau for his Serilog sink for Unified Logging
+// Many thanks to Soren Nils Kuklau and Stephan Schlecht for inspiration.
 // https://github.com/chucker/serilog-sinks-apple-unified-logging
-// and Stephan Schlecht
 // https://stackoverflow.com/questions/53711865/how-to-p-invoke-os-log/53795536#53795536
-// for inspiration.
 //
 
 #include <os/log.h>
@@ -35,7 +33,7 @@ extern void LogDefault(os_log_t log, char *mesage)
 
 extern void LogTrace(os_log_t log, char *message)
 {
-    LogDefault(log, message);
+    os_log(log, "%{public}s", message);
 }
 
 extern void LogDebug(os_log_t log, char *message)
@@ -50,7 +48,7 @@ extern void LogInfo(os_log_t log, char *message)
 
 extern void LogWarning(os_log_t log, char *message)
 {
-    LogInfo(log, message);
+    os_log_info(log, "%{public}s", message);
 }
 
 extern void LogError(os_log_t log, char *message)
