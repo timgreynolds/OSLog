@@ -7,7 +7,7 @@
     <PackageId>Mahonkin.OSLogger</PackageId>
     <Title>Apple Unified Logging</Title>
     <Description>Utility library that provides access to Apple's Unified Log object.</Description>
-    <Version>0.0.41</Version>
+    <Version>1.0.0-rc1</Version>
     <Authors>Timothy Reynolds</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -22,12 +22,12 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="README.md" Pack="True" PackagePath="\" />
-    <None Include="build\Products\$(Configuration)\libOSLogNative.macOS.dylib" Pack="true" PackagePath="runtimes\osx-x64\native\libOSLogNative.dylib" />
-    <None Include="build\Products\$(Configuration)\libOSLogNative.macOS.dylib" Pack="true" PackagePath="runtimes\osx-arm64\native\libOSLogNative.dylib" />
-    <None Include="build\Products\$(Configuration)-iphoneos\libOSLogNative.iOS.dylib" Pack="true" PackagePath="runtimes\ios-x64\native\libOSLogNative.dylib" />
-    <None Include="build\Products\$(Configuration)-iphoneos\libOSLogNative.iOS.dylib" Pack="true" PackagePath="runtimes\ios-arm64\native\libOSLogNative.dylib" />
-    <None Include="build\Products\$(Configuration)-maccatalyst\libOSLogNative.Maccatalyst.dylib" Pack="true" PackagePath="runtimes\maccatalyst-x64\native\libOSLogNative.dylib" />
-    <None Include="build\Products\$(Configuration)-maccatalyst\libOSLogNative.Maccatalyst.dylib" Pack="true" PackagePath="runtimes\maccatalyst-arm64\native\libOSLogNative.dylib" />
+    <None Include="build\Products\Debug\libOSLogNative.macOS.dylib" Pack="true" PackagePath="runtimes\osx-x64\native\libOSLogNative.dylib" />
+    <None Include="build\Products\Debug\libOSLogNative.macOS.dylib" Pack="true" PackagePath="runtimes\osx-arm64\native\libOSLogNative.dylib" />
+    <None Include="build\Products\Debug-iphoneos\libOSLogNative.iOS.dylib" Pack="true" PackagePath="runtimes\ios-x64\native\libOSLogNative.dylib" />
+    <None Include="build\Products\Debug-iphoneos\libOSLogNative.iOS.dylib" Pack="true" PackagePath="runtimes\ios-arm64\native\libOSLogNative.dylib" />
+    <None Include="build\Products\Debug-maccatalyst\libOSLogNative.Maccatalyst.dylib" Pack="true" PackagePath="runtimes\maccatalyst-x64\native\libOSLogNative.dylib" />
+    <None Include="build\Products\Debug-maccatalyst\libOSLogNative.Maccatalyst.dylib" Pack="true" PackagePath="runtimes\maccatalyst-arm64\native\libOSLogNative.dylib" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
