@@ -11,11 +11,6 @@ A simple utility class providing "native interoperability" with the Apple Unifie
 * Visual Studio for Mac or Visual Studio Code
 
 ### Installation
-* net7.0 or net8.0 SDK
-* maui-maccatalyst and maui-ios workloads
-* Visual Studio for Mac or Visual Studio Code
-
-### Installation
 
 * Install the NuGet package
 * Install the NuGet package
