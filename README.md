@@ -13,7 +13,6 @@ A simple utility class providing "native interoperability" with the Apple Unifie
 ### Installation
 
 * Install the NuGet package
-* Install the NuGet package
 
 ## Usage
 
