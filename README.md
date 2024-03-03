@@ -30,12 +30,8 @@ A simple utility class providing "native interoperability" with the Apple Unifie
 ## Additional documentation
 
 * [Github repository](https://github.com/timgreynolds/OSLog/)
-* [Apple Unified Logging](https://developer.apple.com/documentation/os/logging?language=objc)
 * [Logging in C# and .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line)
-* [Github repository](https://github.com/timgreynolds/OSLog/)
 * [Apple Unified Logging](https://developer.apple.com/documentation/os/logging?language=objc)
-* [Logging in C# and .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line)
 
 ## Feedback
-[Github respository issues](https://github.com/timgreynolds/OSLog/issues)
 [Github respository issues](https://github.com/timgreynolds/OSLog/issues)

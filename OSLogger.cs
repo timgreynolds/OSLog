@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using Microsoft.Extensions.Logging;
 
-namespace com.mahonkin.tim.logging;
+namespace com.github.timgreynolds.logging;
 
 public enum OSLogType : uint
 {
