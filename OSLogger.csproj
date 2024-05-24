@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <Import Project="$(MSBuildProjectDirectory)\Version.props" />
     <PropertyGroup>
-        <TargetFrameworks>net8.0;net8.0-ios;net8.0-maccatalyst;net9.0;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks>net7.0;net8.0;net9.0</TargetFrameworks>
         <OutputType>Library</OutputType>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -18,8 +18,15 @@
         <RepositoryUrl>git@github.com:timgreynolds/OSLog.git</RepositoryUrl>
         <RepositoryBranch>main</RepositoryBranch>
         <PackageReadmeFile>PACKAGEREADME.md</PackageReadmeFile>
-        <PackageIcon />
+        <PackageIcon>Logo.png</PackageIcon>
         <PackageReleaseNotes />
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <IncludeSymbols Condition=" '$(Configuration)' == 'Debug' ">true</IncludeSymbols>
+        <EmbedAllSources Condition=" '$(Configuration)' == 'Debug' ">true</EmbedAllSources>
+        <IncludeSymbols Condition=" '$(Configuration)' == 'Release' ">false</IncludeSymbols>
+        <EmbedAllSources Condition=" '$(Configuration)' == 'Release' ">false</EmbedAllSources>
+        <DebugType Condition=" '$(Configuration)' == 'Debug' ">Embedded</DebugType>
         <MajorNumber Condition=" '$(Configuration)' == 'Release' And 'LastReleaseVersion' != '' ">$([System.Version]::Parse($(LastReleaseVersion)).Major)</MajorNumber>
         <MinorNumber Condition=" '$(Configuration)' == 'Release' And 'LastReleaseVersion' != '' ">$([System.Version]::Parse($(LastReleaseVersion)).Minor)</MinorNumber>
         <BuildNumber Condition=" '$(Configuration)' == 'Release' And 'LastReleaseVersion' != '' ">$([MSBuild]::Add($([System.Version]::Parse($(LastReleaseVersion)).Build), 1))</BuildNumber>
@@ -27,17 +34,13 @@
         <VersionSuffix Condition=" '$(Configuration)' == 'Release' " />
         <VersionPrefix Condition=" '$(Configuration)' == 'Debug' And 'LastReleaseVersion' != '' ">$(LastReleaseVersion)</VersionPrefix>
         <VersionSuffix Condition=" '$(Configuration)' == 'Debug' And 'LastReleaseVersion' != '' ">$([System.Convert]::ToInt32($([System.TimeSpan]::FromTicks($([MsBuild]::Subtract($([System.DateTime]::Now.Ticks), $([System.DateTime]::Parse($(LastReleaseDateTime)).Ticks)))).TotalMinutes)))</VersionSuffix>
-        <CreateDocumentationFile>true</CreateDocumentationFile>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <IncludeSymbols Condition=" '$(Configuration)' == 'Debug' ">true</IncludeSymbols>
-        <EmbedAllSources Condition=" '$(Configuration)' == 'Debug' ">true</EmbedAllSources>
-        <IncludeSymbols Condition=" '$(Configuration)' == 'Release' ">false</IncludeSymbols>
-        <EmbedAllSources Condition=" '$(Configuration)' == 'Release' ">false</EmbedAllSources>
-        <DebugType Condition=" '$(Configuration)' == 'Debug' ">Embedded</DebugType>
     </PropertyGroup>
     <ItemGroup>
         <None Include="PACKAGEREADME.md"
-              Pack="True"
+              Pack="true"
+              PackagePath="\" />
+        <None Include="Images\Logo.png"
+              Pack="true"
               PackagePath="\" />
         <None Include="bin\Products\Debug\libOSLogNative.macOS.dylib"
               Pack="true"
@@ -59,16 +62,16 @@
               PackagePath="runtimes\maccatalyst-arm64\native\libOSLogNative.dylib" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Condition="$(TargetFramework.Contains(net8.0))"
+        <PackageReference Condition="$(TargetFramework.Contains(net7))"
+                          Include="Microsoft.Extensions.Logging"
+                          Version="7.*" />
+        <PackageReference Condition="$(TargetFramework.Contains(net8))"
                           Include="Microsoft.Extensions.Logging"
                           Version="8.0.0" />
-        <PackageReference Condition="$(TargetFramework.Contains(net9.0))"
+        <PackageReference Condition="$(TargetFramework.Contains(net9))"
                           Include="Microsoft.Extensions.Logging"
                           Version="9.0.0-preview.3.24172.9" />
     </ItemGroup>
-    <ItemGroup />
-    <ItemGroup />
-    <ItemGroup />
     <Target Name="SaveLastReleaseVersion"
             AfterTargets="Build"
             Condition=" '$(Configuration)' == 'Release' And '$(VersionPrefix)' != '' ">
