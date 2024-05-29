@@ -1,8 +1,10 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSLogger", "OSLogger.csproj", "{F6BAD688-1394-423B-A007-237F842D4628}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSLogger", "OSLogger\OSLogger.csproj", "{F6BAD688-1394-423B-A007-237F842D4628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSLoggerTests", "OSLoggerTests\OSLoggerTests.csproj", "{81FAB49B-9C2A-4144-8039-1CB658DEA288}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +16,10 @@ Global
 		{F6BAD688-1394-423B-A007-237F842D4628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6BAD688-1394-423B-A007-237F842D4628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6BAD688-1394-423B-A007-237F842D4628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81FAB49B-9C2A-4144-8039-1CB658DEA288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FAB49B-9C2A-4144-8039-1CB658DEA288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FAB49B-9C2A-4144-8039-1CB658DEA288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FAB49B-9C2A-4144-8039-1CB658DEA288}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

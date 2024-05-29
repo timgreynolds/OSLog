@@ -5,6 +5,7 @@
         <OutputType>Library</OutputType>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Mahonkin.OSLogger</PackageId>
         <Title>Apple Unified Logging for Dotnet.</Title>
