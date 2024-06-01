@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFrameworks>net7.0;net8.0;net9.0</TargetFrameworks>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
@@ -23,8 +23,9 @@
         </PackageReference>
         <PackageReference Include="NUnit3TestAdapter"
                           Version="4.5.0" />
-        <PackageReference Include="Mahonkin.OSLogger"
-                          Version="1.0.2-35955" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\OSLogger\OSLogger.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Using Include="NUnit.Framework" />
