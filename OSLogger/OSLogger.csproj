@@ -2,6 +2,7 @@
     <Import Project="$(MSBuildProjectDirectory)\Version.props" />
     <PropertyGroup>
         <TargetFrameworks>net7.0;net8.0;net9.0</TargetFrameworks>
+        <!-- <TargetFramework>net7.0</TargetFramework> -->
         <OutputType>Library</OutputType>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -37,45 +38,35 @@
         <VersionSuffix Condition=" '$(Configuration)' == 'Debug' And 'LastReleaseVersion' != '' ">$([System.Convert]::ToInt32($([System.TimeSpan]::FromTicks($([MsBuild]::Subtract($([System.DateTime]::Now.Ticks), $([System.DateTime]::Parse($(LastReleaseDateTime)).Ticks)))).TotalMinutes)))</VersionSuffix>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="PACKAGEREADME.md"
-              Pack="true"
-              PackagePath="\" />
-        <None Include="Images\Logo.png"
-              Pack="true"
-              PackagePath="\" />
-        <None Include="bin\Products\Debug\libOSLogNative.macOS.dylib"
-              Pack="true"
-              PackagePath="runtimes\osx-x64\native\libOSLogNative.dylib" />
-        <None Include="bin\Products\Debug\libOSLogNative.macOS.dylib"
-              Pack="true"
-              PackagePath="runtimes\osx-arm64\native\libOSLogNative.dylib" />
-        <None Include="bin\Products\Debug-iphoneos\libOSLogNative.iOS.dylib"
-              Pack="true"
-              PackagePath="runtimes\ios-x64\native\libOSLogNative.dylib" />
-        <None Include="bin\Products\Debug-iphoneos\libOSLogNative.iOS.dylib"
-              Pack="true"
-              PackagePath="runtimes\ios-arm64\native\libOSLogNative.dylib" />
-        <None Include="bin\Products\Debug-maccatalyst\libOSLogNative.Maccatalyst.dylib"
-              Pack="true"
-              PackagePath="runtimes\maccatalyst-x64\native\libOSLogNative.dylib" />
-        <None Include="bin\Products\Debug-maccatalyst\libOSLogNative.Maccatalyst.dylib"
-              Pack="true"
-              PackagePath="runtimes\maccatalyst-arm64\native\libOSLogNative.dylib" />
+      <Compile Remove="OSLogger.cs" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Condition="$(TargetFramework.Contains(net7))"
-                          Include="Microsoft.Extensions.Logging"
-                          Version="7.*" />
-        <PackageReference Condition="$(TargetFramework.Contains(net8))"
-                          Include="Microsoft.Extensions.Logging"
-                          Version="8.0.0" />
-        <PackageReference Condition="$(TargetFramework.Contains(net9))"
-                          Include="Microsoft.Extensions.Logging"
-                          Version="9.0.0-preview.3.24172.9" />
+      <None Remove="Images\Logo.png" />
+      <None Remove="OSLogger.cs.old" />
     </ItemGroup>
-    <Target Name="SaveLastReleaseVersion"
-            AfterTargets="Build"
-            Condition=" '$(Configuration)' == 'Release' And '$(VersionPrefix)' != '' ">
+    <ItemGroup>
+      <Compile Include="OSLogger.cs.old" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="OSLogger.cs" />
+        <None Include="PACKAGEREADME.md" Pack="true" PackagePath="\" />
+        <None Include="Images\Logo.png" Pack="true" PackagePath="\" />
+        <None Include="bin\Products\Debug\libOSLogNative.macOS.dylib" Pack="true" PackagePath="runtimes\osx-x64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug\libOSLogNative.macOS.dylib" Pack="true" PackagePath="runtimes\osx-arm64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug-iphoneos\libOSLogNative.iOS.dylib" Pack="true" PackagePath="runtimes\ios-x64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug-iphoneos\libOSLogNative.iOS.dylib" Pack="true" PackagePath="runtimes\ios-arm64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug-maccatalyst\libOSLogNative.Maccatalyst.dylib" Pack="true" PackagePath="runtimes\maccatalyst-x64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug-maccatalyst\libOSLogNative.Maccatalyst.dylib" Pack="true" PackagePath="runtimes\maccatalyst-arm64\native\libOSLogNative.dylib" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Condition="$(TargetFramework.Contains(net7))" Include="Microsoft.Extensions.Logging" Version="7.*" />
+        <PackageReference Condition="$(TargetFramework.Contains(net8))" Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+        <PackageReference Condition="$(TargetFramework.Contains(net9))" Include="Microsoft.Extensions.Logging" Version="9.0.0-preview.3.24172.9" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Images\Logo.png" />
+    </ItemGroup>
+    <Target Name="SaveLastReleaseVersion" AfterTargets="Build" Condition=" '$(Configuration)' == 'Release' And '$(VersionPrefix)' != '' ">
         <PropertyGroup>
             <LinesToWrite>                
                 &lt;Project&gt;
@@ -86,9 +77,6 @@
                 &lt;/Project&gt;
             </LinesToWrite>
         </PropertyGroup>
-        <WriteLinesToFile File="$(MSBuildProjectDirectory)\Version.props"
-                          Lines="$(LinesToWrite)"
-                          Overwrite="true"
-                          Encoding="UTF-8" />
+        <WriteLinesToFile File="$(MSBuildProjectDirectory)\Version.props" Lines="$(LinesToWrite)" Overwrite="true" Encoding="UTF-8" />
     </Target>
 </Project>
