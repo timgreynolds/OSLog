@@ -28,37 +28,37 @@ extern void Log(os_log_t log, os_log_type_t type, char *message)
 
 extern void LogDefault(os_log_t log, char *mesage)
 {
-    os_log(log, "%{public}s", mesage);
+    os_log_with_type(log, OS_LOG_TYPE_DEFAULT, "%{public}s", mesage);
 }
 
 extern void LogTrace(os_log_t log, char *message)
 {
-    os_log(log, "%{public}s", message);
+    os_log_with_type(log, OS_LOG_TYPE_DEFAULT, "%{public}s", message);
 }
 
 extern void LogDebug(os_log_t log, char *message)
 {
-    os_log_debug(log, "%{public}s", message);
+    os_log_with_type(log, OS_LOG_TYPE_DEBUG, "%{public}s", message);
 }
 
 extern void LogInfo(os_log_t log, char *message)
 {
-    os_log_info(log, "%{public}s", message);
+    os_log_with_type(log, OS_LOG_TYPE_INFO, "%{public}s", message);
 }
 
 extern void LogWarning(os_log_t log, char *message)
 {
-    os_log_info(log, "%{public}s", message);
+    os_log_with_type(log, OS_LOG_TYPE_INFO, "%{public}s", message);
 }
 
 extern void LogError(os_log_t log, char *message)
 {
-    os_log_error(log, "%{public}s", message);
+    os_log_with_type(log, OS_LOG_TYPE_ERROR, "%{public}s", message);
 }
 
 extern void LogFault(os_log_t log, char *message)
 {
-    os_log_error(log, "%{public}s", message);
+    os_log_with_type(log, OS_LOG_TYPE_FAULT, "%{public}s", message);
 }
 
 extern void LogCritical(os_log_t log, char *message)

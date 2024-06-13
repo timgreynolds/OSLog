@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="$(MSBuildProjectDirectory)\Version.props" />
+    <PropertyGroup>
+        <TargetFrameworks>net7.0;net8.0;</TargetFrameworks>
+        <!-- <TargetFramework>net7.0</TargetFramework> -->
+        <OutputType>Library</OutputType>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Mahonkin.OSLogger</PackageId>
+        <Title>Apple Unified Logging for Dotnet.</Title>
+        <Description>Utility library that provides access to Apple's Unified Log object.</Description>
+        <Authors>Timothy Reynolds</Authors>
+        <Company />
+        <Copyright>Copyright 2023-2024 Timothy Reynolds</Copyright>
+        <PackageTags>macos;oslog;logging;log;logger;unifiedlogging;ioslog;maccatalyst;ios</PackageTags>
+        <PackageProjectUrl>https://github.com/timgreynolds/OSLog</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>git@github.com:timgreynolds/OSLog.git</RepositoryUrl>
+        <RepositoryBranch>main</RepositoryBranch>
+        <PackageReadmeFile>PACKAGEREADME.md</PackageReadmeFile>
+        <PackageIcon>Logo.png</PackageIcon>
+        <PackageReleaseNotes />
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <IncludeSymbols Condition=" '$(Configuration)' == 'Debug' ">true</IncludeSymbols>
+        <EmbedAllSources Condition=" '$(Configuration)' == 'Debug' ">true</EmbedAllSources>
+        <IncludeSymbols Condition=" '$(Configuration)' == 'Release' ">false</IncludeSymbols>
+        <EmbedAllSources Condition=" '$(Configuration)' == 'Release' ">false</EmbedAllSources>
+        <DebugType Condition=" '$(Configuration)' == 'Debug' ">Embedded</DebugType>
+        <MajorNumber Condition=" '$(Configuration)' == 'Release' And 'LastReleaseVersion' != '' ">$([System.Version]::Parse($(LastReleaseVersion)).Major)</MajorNumber>
+        <MinorNumber Condition=" '$(Configuration)' == 'Release' And 'LastReleaseVersion' != '' ">$([System.Version]::Parse($(LastReleaseVersion)).Minor)</MinorNumber>
+        <BuildNumber Condition=" '$(Configuration)' == 'Release' And 'LastReleaseVersion' != '' ">$([MSBuild]::Add($([System.Version]::Parse($(LastReleaseVersion)).Build), 1))</BuildNumber>
+        <VersionPrefix Condition=" '$(Configuration)' == 'Release' And 'LastReleaseVersion' != '' ">$(MajorNumber).$(MinorNumber).$(BuildNumber)</VersionPrefix>
+        <VersionSuffix Condition=" '$(Configuration)' == 'Release' " />
+        <VersionPrefix Condition=" '$(Configuration)' == 'Debug' And 'LastReleaseVersion' != '' ">$(LastReleaseVersion)</VersionPrefix>
+        <VersionSuffix Condition=" '$(Configuration)' == 'Debug' And 'LastReleaseVersion' != '' ">$([System.Convert]::ToInt32($([System.TimeSpan]::FromTicks($([MsBuild]::Subtract($([System.DateTime]::Now.Ticks), $([System.DateTime]::Parse($(LastReleaseDateTime)).Ticks)))).TotalMinutes)))</VersionSuffix>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="PACKAGEREADME.md" Pack="true" PackagePath="\" />
+        <None Include="Images\Logo.png" Pack="true" PackagePath="\" />
+        <None Include="bin\Products\Debug\libOSLogNative.macOS.dylib" Pack="true" PackagePath="runtimes\osx-x64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug\libOSLogNative.macOS.dylib" Pack="true" PackagePath="runtimes\osx-arm64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug-iphoneos\libOSLogNative.iOS.dylib" Pack="true" PackagePath="runtimes\ios-x64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug-iphoneos\libOSLogNative.iOS.dylib" Pack="true" PackagePath="runtimes\ios-arm64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug-maccatalyst\libOSLogNative.Maccatalyst.dylib" Pack="true" PackagePath="runtimes\maccatalyst-x64\native\libOSLogNative.dylib" />
+        <None Include="bin\Products\Debug-maccatalyst\libOSLogNative.Maccatalyst.dylib" Pack="true" PackagePath="runtimes\maccatalyst-arm64\native\libOSLogNative.dylib" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Condition="$(TargetFramework.Contains(net7))" Include="Microsoft.Extensions.Logging" Version="7.*" />
+        <PackageReference Condition="$(TargetFramework.Contains(net8))" Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+        <PackageReference Condition="$(TargetFramework.Contains(net9))" Include="Microsoft.Extensions.Logging" Version="9.0.0-preview.3.24172.9" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Images\Logo.png" />
+    </ItemGroup>
+    <Target Name="SaveLastReleaseVersion" AfterTargets="Build" Condition=" '$(Configuration)' == 'Release' And '$(VersionPrefix)' != '' ">
+        <PropertyGroup>
+            <LinesToWrite>                
+                &lt;Project&gt;
+                &lt;PropertyGroup&gt;
+                &lt;LastReleaseVersion&gt;$(VersionPrefix)&lt;/LastReleaseVersion&gt;
+                &lt;LastReleaseDateTime&gt;$([System.DateTime]::Now.ToString(yyyy/MM/dd HH:mm:00))&lt;/LastReleaseDateTime&gt;
+                &lt;/PropertyGroup&gt;
+                &lt;/Project&gt;
+            </LinesToWrite>
+        </PropertyGroup>
+        <WriteLinesToFile File="$(MSBuildProjectDirectory)\Version.props" Lines="$(LinesToWrite)" Overwrite="true" Encoding="UTF-8" />
+    </Target>
+</Project>
