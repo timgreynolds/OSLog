@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using com.mahonkin.tim.extensions.Logging;
-using com.mahonkin.tim.logging;
-using Microsoft.Extensions.Logging;
+﻿using System.Collections;
 
 namespace com.mahonkin.tim.LoggingTest;
 
