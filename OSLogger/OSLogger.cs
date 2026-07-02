@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using com.mahonkin.tim.logging;
+using com.mahonkin.tim.Logging;
 using Microsoft.Extensions.Logging;
 
-namespace com.mahonkin.tim.logging
+namespace com.mahonkin.tim.Logging
 {
     /// <summary>
     /// Apple Unified Logging <see href="https://developer.apple.com/documentation/os/oslogtype">LogType</see> enum.
