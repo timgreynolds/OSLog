@@ -162,7 +162,7 @@ namespace com.mahonkin.tim.Logging
     }
 }
 
-namespace com.mahonkin.tim.extensions.Logging
+namespace com.mahonkin.tim.extensions.Logging 
 {
     /// <summary>
     /// Some potentially helpful extension methods.

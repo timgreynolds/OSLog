@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.2</SupportedOSPlatformVersion>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>com.mahonkin.tim.LoggingTest.TestMaui</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+        <BuildInParallel>false</BuildInParallel>
+		<ApplicationTitle>Test Maui Logging</ApplicationTitle>
+		<ApplicationId>com.mahonkin.tim.LoggingTest.TestMaui</ApplicationId>
+        <ApplicationIdGuid></ApplicationIdGuid>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+		<Authors>Timothy Reynolds</Authors>
+		<Copyright>Copyright © 2026 Timothy Reynolds. All rights reserved.</Copyright>
+        <Company />
+	</PropertyGroup>
+        <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
+            <ArchiveOnBuild>false</ArchiveOnBuild>
+            <CreatePackage>false</CreatePackage>
+            <CodesignProvision>Automatic</CodesignProvision>
+            <CodesignKey>Apple Development: tim@mahonkin.com (R62H93RXZD)</CodesignKey>
+            <BuildIpa>false</BuildIpa>
+            <MtouchLink>None</MtouchLink>
+        </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-maccatalyst|AnyCPU'">
+        <ArchiveOnBuild>false</ArchiveOnBuild>
+        <CreatePackage>false</CreatePackage>
+        <CodesignKey>Apple Development: tim@mahonkin.com (R62H93RXZD)</CodesignKey>
+        <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+        <MtouchLink>None</MtouchLink>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
+        <DebugSymbols>false</DebugSymbols>
+        <WarningLevel>4</WarningLevel>
+        <ArchiveOnBuild>true</ArchiveOnBuild>
+        <CreatePackage>true</CreatePackage>
+        <BuildIpa>true</BuildIpa>
+        <CodesignProvision>Automatic</CodesignProvision>
+        <CodesignKey>Apple Development: tim@mahonkin.com (R62H93RXZD)</CodesignKey>
+		<MtouchLink>None</MtouchLink>
+        <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(TargetFramework)|$(Platform)' == 'Release|net9-maccatalyst|AnyCPU' ">
+        <DebugSymbols>false</DebugSymbols>
+        <WarningLevel>4</WarningLevel>
+        <ArchiveOnBuild>true</ArchiveOnBuild>
+        <CreatePackage>true</CreatePackage>
+        <CodesignKey>Apple Development: tim@mahonkin.com (R62H93RXZD)</CodesignKey>
+        <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+		<MtouchLink>None</MtouchLink>
+    </PropertyGroup>
+    <ItemGroup>
+		<Compile Remove="TestTerminal.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" />
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" BaseSize="128,128" />
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*.png" />
+		<MauiImage Include="Resources\Images\*.svg" />
+		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+		<MauiImage Update="Resources\Images\logo.svg" Resize="True" BaseSize="112x128" />
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.*" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.*" />
+		<PackageReference Include="Mahonkin.OSLogger" Version="1.0.3-1079227" />
+	</ItemGroup>
+</Project>

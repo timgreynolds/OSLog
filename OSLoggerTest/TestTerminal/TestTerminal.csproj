@@ -10,6 +10,6 @@
 	<Compile Include="TestTerminal.cs" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Mahonkin.OSLogger" Version="1.0.3-1078900" />
+        <PackageReference Include="Mahonkin.OSLogger" Version="1.0.3-1079227" />
     </ItemGroup>
 </Project>
