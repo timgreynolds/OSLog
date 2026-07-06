@@ -54,9 +54,6 @@
         <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
 		<MtouchLink>None</MtouchLink>
     </PropertyGroup>
-    <ItemGroup>
-		<Compile Remove="TestTerminal.cs" />
-	</ItemGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" />
@@ -75,6 +72,6 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.*" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.*" />
-		<PackageReference Include="Mahonkin.OSLogger" Version="1.0.3-1079227" />
+		<PackageReference Include="Mahonkin.OSLogger" Version="1.1.*" />
 	</ItemGroup>
 </Project>
