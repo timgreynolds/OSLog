@@ -30,32 +30,19 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button x:Name="CounterBtn"
-                        Grid.Column="1"
-                        Grid.Row="0"
-                        Text="Click me!"
-                        Clicked="OnCounterClicked"
-                        HorizontalOptions="Fill"
-                        CornerRadius="20"
-                        TextColor="{StaticResource Black}"
-                        BackgroundColor="{StaticResource Gray500}"/>
                 <Picker x:Name="LevelPicker"
-                        Grid.Column="0"
+                        Grid.Column="1"
                         Grid.Row="1"
                         Title="Select A Log Level"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
                         TextColor="{StaticResource Black}"/>
-                <Entry x:Name="MessageText"
-                       Grid.Column="1"
-                       Grid.ColumnSpan="2"
-                       Grid.Row="1"
-                       Text="Type your message"
-                       TextColor="{StaticResource Black}"/>
                 <Button x:Name="MessageBtn"
                         Grid.Column="1"
                         Grid.Row="2"
                         Text="Click me to write a messge to the console log"
                         Clicked="OnMessageClicked"
-                        HorizontalOptions="Fill"
+                        HorizontalOptions="Center"
                         CornerRadius="20"
                         TextColor="{StaticResource Black}"
                         BackgroundColor="{StaticResource Gray500}"/>
