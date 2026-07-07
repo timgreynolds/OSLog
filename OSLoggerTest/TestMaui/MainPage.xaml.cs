@@ -8,7 +8,6 @@ namespace com.mahonkin.tim.LoggingTest.TestMaui;
 public partial class MainPage : ContentPage
 {
 	private IntPtr _logPtr = OSLogger.Create(nameof(LoggingTest), nameof(MainPage));
-	private int _count = 0;
 
 	public MainPage()
 	{
@@ -26,27 +25,11 @@ public partial class MainPage : ContentPage
 	{
 		if (Enum.TryParse<LogLevel>(LevelPicker.SelectedItem.ToString(), out LogLevel selectedLevel))
 		{
-			OSLogger.Log(_logPtr, OSLogger.GetOsLogType(selectedLevel), $"Level: {selectedLevel} - {MessageText.Text}");
+			OSLogger.Log(_logPtr, OSLogger.GetOsLogType(selectedLevel), $"Level: {selectedLevel} logged");
 		}
 		else
 		{
 			OSLogger.LogWarning(_logPtr, $"Could not parse log level {selectedLevel}");
-		}
-	}
-
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		_count++;
-
-		if (_count == 1)
-		{
-			CounterBtn.Text = $"Clicked {_count} time";
-			OSLogger.LogDebug(_logPtr, $"Clicked {_count} time");
-		}
-		else
-		{
-			CounterBtn.Text = $"Clicked {_count} times";
-			OSLogger.LogDebug(_logPtr, $"Clicked {_count} times");
 		}
 	}
 }
