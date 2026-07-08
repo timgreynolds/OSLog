@@ -1,11 +1,11 @@
 ﻿using System;
 using com.mahonkin.tim.extensions.Logging;
-using com.mahonkin.tim.Logging;
+using com.mahonkin.tim.Logging.OSLog;
 using Microsoft.Extensions.Logging;
 
-namespace com.mahonkin.tim.LoggingTest;
+namespace com.mahonkin.tim.Logging.OSLog.LoggingTest;
 
-public static class LoggingTest
+public static class TestTerminal
 {
     public static void Main(string[] args)
     {

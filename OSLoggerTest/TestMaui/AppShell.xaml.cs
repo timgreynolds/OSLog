@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Controls;
 
-namespace com.mahonkin.tim.LoggingTest.TestMaui;
+namespace com.mahonkin.tim.Logging.OSLog.LoggingTest.TestMaui;
 
 public partial class AppShell : Shell
 {

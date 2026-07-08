@@ -1,40 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.1</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.2</SupportedOSPlatformVersion>
 		<OutputType>Exe</OutputType>
-		<RootNamespace>com.mahonkin.tim.LoggingTest.TestMaui</RootNamespace>
+		<RootNamespace>com.mahonkin.tim.Logging.OSLog.LoggingTest</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>enable</Nullable>
         <BuildInParallel>false</BuildInParallel>
+		<!-- Display name -->
 		<ApplicationTitle>Test Maui Logging</ApplicationTitle>
+		<!-- App Identifier -->
 		<ApplicationId>com.mahonkin.tim.LoggingTest.TestMaui</ApplicationId>
-        <ApplicationIdGuid></ApplicationIdGuid>
+       	<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		<Authors>Timothy Reynolds</Authors>
 		<Copyright>Copyright © 2026 Timothy Reynolds. All rights reserved.</Copyright>
         <Company />
-	</PropertyGroup>
-        <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
-            <ArchiveOnBuild>false</ArchiveOnBuild>
-            <CreatePackage>false</CreatePackage>
-            <CodesignProvision>Automatic</CodesignProvision>
-            <CodesignKey>Apple Development: tim@mahonkin.com (R62H93RXZD)</CodesignKey>
-            <BuildIpa>false</BuildIpa>
-            <MtouchLink>None</MtouchLink>
-        </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-maccatalyst|AnyCPU'">
+		<CodesignKey>Apple Development: tim@mahonkin.com (R62H93RXZD)</CodesignKey>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(TargetFramework)|$(Platform)' == 'Debug|net9.0-ios|AnyCPU' ">
         <ArchiveOnBuild>false</ArchiveOnBuild>
         <CreatePackage>false</CreatePackage>
-        <CodesignKey>Apple Development: tim@mahonkin.com (R62H93RXZD)</CodesignKey>
-        <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+        <CodesignProvision>Automatic</CodesignProvision>
+        <BuildIpa>false</BuildIpa>
         <MtouchLink>None</MtouchLink>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
+  	<PropertyGroup Condition=" '$(Configuration)|$(TargetFramework)|$(Platform)' == 'Debug|net9.0-maccatalyst|AnyCPU' ">
+      	<ArchiveOnBuild>false</ArchiveOnBuild>
+       	<CreatePackage>false</CreatePackage>
+       	<PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+       	<MtouchLink>None</MtouchLink>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(TargetFramework)|$(Platform)' == 'Release|net9.0-ios|AnyCPU' ">
         <DebugSymbols>false</DebugSymbols>
         <WarningLevel>4</WarningLevel>
         <ArchiveOnBuild>true</ArchiveOnBuild>
@@ -72,6 +71,6 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.*" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.*" />
-		<PackageReference Include="Mahonkin.OSLogger" Version="1.1.*" />
+		<PackageReference Include="Mahonkin.OSLogger" Version="[1.1.2-132]" />
 	</ItemGroup>
 </Project>

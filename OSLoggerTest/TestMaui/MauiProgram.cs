@@ -2,7 +2,7 @@
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 
-namespace com.mahonkin.tim.LoggingTest.TestMaui;
+namespace com.mahonkin.tim.Logging.OSLog.LoggingTest.TestMaui;
 
 public static class MauiProgram
 {
@@ -18,7 +18,8 @@ public static class MauiProgram
 			});
 
 #if DEBUG
-		builder.Logging.AddDebug();
+		builder.Logging.SetMinimumLevel(LogLevel.Debug)
+			.AddDebug();
 #endif
 
 		return builder.Build();

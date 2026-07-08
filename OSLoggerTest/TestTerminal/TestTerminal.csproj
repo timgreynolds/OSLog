@@ -4,12 +4,9 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
-	<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+	<RootNamespace>com.mahonkin.tim.Logging.OSLog.LoggingTest</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-	<Compile Include="TestTerminal.cs" />
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="Mahonkin.OSLogger" Version="1.1.*" />
+        <PackageReference Include="Mahonkin.OSLogger" Version="[1.1.2-132]" />
     </ItemGroup>
 </Project>
