@@ -2,7 +2,7 @@
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 
-namespace com.mahonkin.tim.LoggingTest.TestMaui;
+namespace com.mahonkin.tim.Logging.OSLog.LoggingTest.TestMaui;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

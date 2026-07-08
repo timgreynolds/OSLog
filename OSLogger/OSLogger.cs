@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using com.mahonkin.tim.Logging;
 using Microsoft.Extensions.Logging;
 
-namespace com.mahonkin.tim.Logging
+namespace com.mahonkin.tim.Logging.OSLog
 {
     /// <summary>
     /// Apple Unified Logging <see href="https://developer.apple.com/documentation/os/oslogtype">LogType</see> enum.
@@ -162,7 +161,7 @@ namespace com.mahonkin.tim.Logging
     }
 }
 
-namespace com.mahonkin.tim.extensions.Logging 
+namespace com.mahonkin.tim.extensions.Logging
 {
     /// <summary>
     /// Some potentially helpful extension methods.
@@ -170,11 +169,11 @@ namespace com.mahonkin.tim.extensions.Logging
     public static class LogExtensions
     {
         /// <summary>
-        /// Extension method that returns the <see cref="OSLogType">LogType</see> corresponding to the LogLevel.
+        /// Extension method that returns the <see cref="tim.Logging.OSLog.OSLogType">LogType</see> corresponding to the LogLevel.
         /// </summary>
-        public static OSLogType LogType(this LogLevel logLevel)
+        public static tim.Logging.OSLog.OSLogType LogType(this LogLevel logLevel)
         {
-            return OSLogger.GetOsLogType(logLevel);
+            return tim.Logging.OSLog.OSLogger.GetOsLogType(logLevel);
         }
     }
 }

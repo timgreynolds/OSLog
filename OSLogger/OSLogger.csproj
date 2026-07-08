@@ -7,6 +7,7 @@
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <RootNamespace>com.mahonkin.tim.Logging.OSLog</RootNamespace>
         <SolutionDir Condition=" '$(SolutionDir)' == '' ">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), OSLogger.sln))\</SolutionDir>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Mahonkin.OSLogger</PackageId>
