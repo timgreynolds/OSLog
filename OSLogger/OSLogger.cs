@@ -249,11 +249,70 @@ namespace com.mahonkin.tim.Logging.OSLog
             logCritical(logPtr, message);
         }
 
-        ///
+        /// <summary>
+        /// Writes a Default message to the log.<br/>
+        /// <see href="https://developer.apple.com/documentation/os/logger/3580304-log">LogNone()</see> 
+        /// </summary>
         public static void LogNone(IntPtr logPtr, OSLogInterpolatedStringHandler builder)
         {
             string message = builder.ToString() ?? string.Empty;
             logNone(logPtr, message);
+        }
+
+        ///
+        public static void Log(IntPtr logPtr, OSLogType logType, string message, params object?[] parms)
+        {
+            string composed = string.Format(new OSLogFormatter(), message, parms) ?? string.Empty;
+            log(logPtr, logType, composed);
+        }
+
+        ///
+        public static void LogTrace(IntPtr logPtr, string message, params object?[] parms)
+        {
+            string composed = string.Format(new OSLogFormatter(), message, parms) ?? string.Empty;
+            logTrace(logPtr, composed);
+        }
+
+        ///
+        public static void LogDebug(IntPtr logPtr, string message, params object?[] parms)
+        {
+            string composed = string.Format(new OSLogFormatter(), message, parms) ?? string.Empty;
+            logDebug(logPtr, composed);
+        }
+
+        ///
+        public static void LogInformation(IntPtr logPtr, string message, params object?[] parms)
+        {
+            string composed = string.Format(new OSLogFormatter(), message, parms) ?? string.Empty;
+            logInformation(logPtr, composed);
+        }
+
+        ///
+        public static void LogWarning(IntPtr logPtr, string message, params object?[] parms)
+        {
+            string composed = string.Format(new OSLogFormatter(), message, parms) ?? string.Empty;
+            logWarning(logPtr, composed);
+        }
+
+        ///
+        public static void LogError(IntPtr logPtr, string message, params object?[] parms)
+        {
+            string composed = string.Format(new OSLogFormatter(), message, parms) ?? string.Empty;
+            logError(logPtr, composed);
+        }
+
+        ///
+        public static void LogCritical(IntPtr logPtr, string message, params object?[] parms)
+        {
+            string composed = string.Format(new OSLogFormatter(), message, parms) ?? string.Empty;
+            logCritical(logPtr, composed);
+        }
+
+        ///
+        public static void LogNone(IntPtr logPtr, string message, params object?[] parms)
+        {
+            string composed = string.Format(new OSLogFormatter(), message, parms) ?? string.Empty;
+            logNone(logPtr, composed);
         }
     }
 }
