@@ -3,7 +3,7 @@
     <Import Project="$(MSBuildProjectDirectory)\Version.props" />
     <PropertyGroup>
         <SolutionDir Condition=" '$(SolutionDir)' == '' ">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), OSLogger.sln))\</SolutionDir>
-        <TargetFrameworks>net9.0;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks>net9.0;net9.0-ios;net9.0-maccatalyst;net8.0;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
         <OutputType>Library</OutputType>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -14,7 +14,7 @@
         <PackageId>Mahonkin.OSLogger</PackageId>
         <Title>Apple Unified Logging for Dotnet.</Title>
         <Description>Utility library that provides access to Apple's Unified Log object.</Description>
-        <Authors>Timothy Reynolds</Authors>
+        <Authors>Timothy G. Reynolds</Authors>
         <Company />
         <Copyright>Copyright 2023-2026 Timothy G. Reynolds</Copyright>
         <PackageTags>macos;oslog;logging;log;logger;unifiedlogging;ioslog;maccatalyst;ios</PackageTags>
@@ -53,7 +53,7 @@
         <None Include="$(SolutionDir)\Build\Debug-iphoneos\libOSLogNative.ios.dylib" Pack="true" PackagePath="runtimes\ios-arm64\native\libOSLogNative.dylib" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="10.*" />
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Include="Images\Logo.png" />
