@@ -17,13 +17,13 @@
         <Authors>Timothy G. Reynolds</Authors>
         <Company />
         <Copyright>Copyright 2023-2026 Timothy G. Reynolds</Copyright>
-        <PackageTags>macos;oslog;logging;log;logger;unifiedlogging;ioslog;maccatalyst;ios</PackageTags>
+        <PackageTags>macos;oslog;logging;log;logger;unified-logging;ios-log;maccatalyst;ios</PackageTags>
         <PackageProjectUrl>https://github.com/timgreynolds/OSLog</PackageProjectUrl>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>git@github.com:timgreynolds/OSLog.git</RepositoryUrl>
         <RepositoryBranch>master</RepositoryBranch>
         <PackageReadmeFile>PACKAGEREADME.md</PackageReadmeFile>
-    	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    	<PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageIcon>Logo.png</PackageIcon>
         <PackageReleaseNotes />
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -43,7 +43,7 @@
     </PropertyGroup>
     <ItemGroup>
         <None Include="PACKAGEREADME.md" Pack="true" PackagePath="\" />
-    	<None Include="$(SolutionDir)\LICENSE.txt" Pack="true" PackagePath="\" />
+    	<None Include="$(SolutionDir)\LICENSE" Pack="true" PackagePath="\" />
         <None Include="Images\Logo.png" Pack="true" PackagePath="\" />
         <None Include="$(SolutionDir)\Build\Debug\libOSLogNative.macos.dylib" Pack="true" PackagePath="runtimes\osx-x64\native\libOSLogNative.dylib" />
         <None Include="$(SolutionDir)\Build\Debug\libOSLogNative.macos.dylib" Pack="true" PackagePath="runtimes\osx-arm64\native\libOSLogNative.dylib" />
